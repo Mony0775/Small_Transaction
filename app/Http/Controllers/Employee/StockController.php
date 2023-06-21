@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Employee;
 
 use App\Models\Order;
 use App\Models\Product;
@@ -29,7 +29,7 @@ class StockController extends Controller
             ->where('products.id', $product_id)->get();
             // dd($items, $item);
         }
-        return view('admin.inventory.inventories', compact('product', 'items', 'item', 'itemS'));
+        return view('employee.inventory.inventories', compact('product', 'items', 'item', 'itemS'));
     }
     public function order()
     {
@@ -43,7 +43,7 @@ class StockController extends Controller
                         ->where('transactions.type', 'order')
                         ->get();
         // dd($transactions);
-        return view('admin.inventory.order', compact('transactions'));
+        return view('employee.inventory.order', compact('transactions'));
     }
     public function purchasing()
     {
@@ -55,7 +55,7 @@ class StockController extends Controller
                         ->leftJoin('payments', 'payments.id', 'transactions.payment_id')
                         ->where('transactions.type', 'purchase')
                         ->get();
-        return view('admin.inventory.purchase', compact('transactions'));
+        return view('employee.inventory.purchase', compact('transactions'));
     }
 
 }

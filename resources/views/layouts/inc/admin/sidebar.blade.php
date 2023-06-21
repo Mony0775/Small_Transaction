@@ -1,13 +1,13 @@
 <ul class="sidebar-nav" id="sidebar-nav" >
 
   <li class="nav-item">
-    <a class="nav-link active" href="/admin/dashboard">
+    <a class="nav-link" href="/admin/dashboard">
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
   </li><!-- End Dashboard Nav -->
   <li class="nav-item">
-    <a class="nav-link " href="{{ route('customers.index') }}">
+    <a class="nav-link collapsed" href="{{ route('customers.index') }}">
       <i class="bi bi-person-down"></i>
       <span>Customer</span>
     </a>

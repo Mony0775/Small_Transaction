@@ -11,6 +11,7 @@
   </nav>
 </div><!-- End Page Title -->
 <section class="section dashboard">
+
   <div class="row">
     <!-- Left side columns -->
     <div class="col-lg-12">
@@ -19,7 +20,7 @@
           <div class="card-header">
             <a href="{{ route('orders.create') }}" style="float: right" class="btn btn-dark"><i class="bi bi-plus"></i> Add New Order</a>
           </div>
-          <table class="table datatable w-auto small overflow-x-auto table-striped">
+          <table class="table datatable table-striped">
             <thead>
               <tr>
                 <th scope="col">Order ID</th>
@@ -53,13 +54,9 @@
                 <td>${{ $order->payment_amount }} </td>
                 <td>{{ $order->shipping_date }}</td>
                 <td>
-                  <div class="btn-group">
-                    <div class="mx-3">
-                      <a href="/admin/orders/{{ $order->id }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-fill"></i> View</a>
-                    </div>
-                    <div class="mx-3">
-                      <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#Deleteorder{{ $order->id }}"><i class="bi bi-trash"></i> Delete</a>
-                    </div>
+                  <div class="btn-group mx-2">
+                      <a href="/admin/orders/{{ $order->id }}" class="btn btn-sm btn-warning px-2"><i class="bi bi-eye"></i></a>
+                      <a href="" class="btn btn-sm btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#Deleteorder{{ $order->id }}"><i class="bi bi-trash"></i></a>
                   </div>
                 </td>
               </tr>

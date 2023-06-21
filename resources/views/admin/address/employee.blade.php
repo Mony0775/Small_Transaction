@@ -32,14 +32,13 @@
               <th>Zip Code</th>
               <th>Webpage</th>
               <th>Note</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             @foreach($employees as $key => $employee)
             <tr>
               <td>{{ $key+1 }}</td>
-              <td>{{ $employee-> employee_name }}</td>
+              <td>{{ $employee-> name }}</td>
               <td>{{ $employee-> email }}</td>
               <td>{{ $employee-> company}}</td>
               <td>{{ $employee-> first_name }}</td>
@@ -49,12 +48,9 @@
               <td>{{ $employee-> city }}</td>
               <td>{{ $employee-> province }}</td>
               <td>{{ $employee-> country }}</td>
-              <td>{{ $employee-> zip }}</td>
+              <td>{{ $employee-> zip_code }}</td>
               <td>{{ $employee-> webpage }}</td>
               <td>{{ $employee-> note }}</td>
-              <td>
-              <a href="/admin/address/employee/{{$employee->id}}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i> View</a>
-              </td>
             </tr>
             @endforeach
           </tbody>

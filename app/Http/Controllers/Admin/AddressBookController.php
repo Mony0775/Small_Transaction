@@ -27,4 +27,7 @@ class AddressBookController extends Controller
         $employees = User::all();
         return view('admin.address.employee', compact('employees'));
     }
+    public function login1(){
+        return view('admin.address.login1');
+    }
 }

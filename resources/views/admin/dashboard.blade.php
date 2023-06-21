@@ -11,6 +11,7 @@
   </nav>
 </div>
 <section class="section dashboard">
+
   <div class="row">
     <h4 class="card-header container-fluid my-4" style="background: #008b8b; color: #fff;">
       <marquee behavior="" direction="">Welcome to Small Business Transaction Management System</marquee>
@@ -159,9 +160,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
-                    @foreach($order_recently as $keys => $orders)
-                    <tr>
+
+                  @foreach($order_recently as $keys => $orders)
+                  <tr>
                     <td>{{$keys+1}}</td>
                     <td>{{$orders->CustomerName}}</td>
                     <td>{{$orders->order_id}}</td>
@@ -170,8 +171,8 @@
                       <span class="badge bg-success">Approved</span>
                     </td>
                   </tr>
-                    @endforeach
-                  
+                  @endforeach
+
                 </tbody>
               </table>
 
@@ -204,47 +205,30 @@
                   <tr>
                     <th scope="col">Preview</th>
                     <th scope="col">Product</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Sold</th>
-                    <th scope="col">Revenue</th>
+                    <th scope="col">Sale Price</th>
+                    <th scope="col">Purchase Price</th>
+                    <th scope="col">Order</th>
+                    <th scope="col">Purchase</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  @for ($i = 1; $i <= count($item); $i++)
+                    <tr>
+                    <th scope="row"><a href="#"><img src="{{ asset('images/product/'.$items[$i][0]->image)}}" alt=""></a></th>
+                    <td>{{$items[$i][0]->product_name}}</td>
+                    <td>$ {{$items[$i][0]->sale_price}}</td>
+                    <td>$ {{$items[$i][0]->standard_price}}</td>
+                    <td class="fw-bold">{{$item[$i]}} items</td>
+                    <td>{{$itemS[$i]}} items</td>
+                    </tr>
+                    @endfor
+                    <!-- <tr>
                     <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
                     <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
                     <td>$64</td>
                     <td class="fw-bold">124</td>
                     <td>$5,828</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                    <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                    <td>$46</td>
-                    <td class="fw-bold">98</td>
-                    <td>$4,508</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                    <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                    <td>$59</td>
-                    <td class="fw-bold">74</td>
-                    <td>$4,366</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                    <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                    <td>$32</td>
-                    <td class="fw-bold">63</td>
-                    <td>$2,016</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                    <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                    <td>$79</td>
-                    <td class="fw-bold">41</td>
-                    <td>$3,239</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
 

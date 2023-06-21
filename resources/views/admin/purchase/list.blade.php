@@ -54,10 +54,8 @@
                 <td>{{ $purchase->shipping_date }}</td>
                 <td>
                   <div class="row btn-group mx-2">
-                    <div class="col-6 mx-3">
-                      <a href="/admin/purchases/{{ $purchase->id }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-fill"></i></a>
-                    </div>
-                    <div class="col-6 mx-3">
+                    <div class="mx-3">
+                      <a href="/admin/purchases/{{ $purchase->id }}" class="btn btn-sm btn-warning"><i class="bi bi-eye"></i></a>
                       <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#Deletepurchase{{ $purchase->id }}"><i class="bi bi-trash"></i></a>
                     </div>
                   </div>

@@ -11,7 +11,7 @@
         </ol>
     </nav>
 </div><!-- End Page Title -->
-
+<button class="btn btn-primary" id="exportToPdf">Export</button>
 <div class="card">
     <div class="card-header bg-primary text-white" style="text-decoration: bold">
         General Information {{$order_details[0]->order_id}}
@@ -200,4 +200,13 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+<script>
+    $('#exportToPdf').on('click', function(e) {
+        e.preventDefault();
+        window.print();
+        console.log(test);
+    });
+</script>
 @endsection

@@ -1,11 +1,11 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 <div class="pagetitle">
   <h1>Inventories</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+      <li class="breadcrumb-item"><a href="/employee/dashboard">Home</a></li>
       <li class="breadcrumb-item active">Inventories</li>
     </ol>
   </nav>

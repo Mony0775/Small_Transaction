@@ -53,12 +53,10 @@
                 <td>${{ $order->payment_amount }} </td>
                 <td>{{ $order->shipping_date }}</td>
                 <td>
-                  <div class="btn-group">
+                  <div class="row btn-group">
                     <div class="mx-3">
-                      <a href="/employee/orders/{{ $order->id }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-fill"></i> View</a>
-                    </div>
-                    <div class="mx-3">
-                      <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#Deleteorder{{ $order->id }}"><i class="bi bi-trash"></i> Delete</a>
+                      <a href="/employee/order/{{ $order->id }}" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></a>
+                      <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#Deleteorder{{ $order->id }}"><i class="bi bi-trash"></i></a>
                     </div>
                   </div>
                 </td>

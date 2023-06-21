@@ -78,7 +78,8 @@ class EmployeeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $employee = User::find($id);
+        dd($employee);
     }
 
     /**

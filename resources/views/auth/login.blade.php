@@ -11,7 +11,7 @@
   <link href="{{ asset('admin/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
 </head>
 <body style="background: linear-gradient(to right, #36d1dc, #5b86e5);">
-<div class="container py-5" >
+<div class="container align-items-center py-5" >
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card mx-5 my-5">
@@ -25,7 +25,7 @@
                             <div class="col-md-12">
                                 <label for="email" class="col-form-label">{{ __('Email Address') }}</label>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -40,7 +40,7 @@
                             <div class="col-md-12">
                                 <label for="password" class=" col-form-label">{{ __('Password') }}</label>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <input id="password" type="password" class="pr-5 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -59,7 +59,7 @@
                                     
                                 </div>
                         <div class="row mb-3 mt-3">
-                            <div  class="col-md-9" >
+                            <div  class="col-md-12" >
                                 <button  type="submit" class="btn btn-primary" style="width:100%" >
                                     {{ __('Login') }}
                                 </button>

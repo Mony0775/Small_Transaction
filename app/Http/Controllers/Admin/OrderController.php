@@ -165,6 +165,12 @@ class OrderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $orders = Order::find($id);
+        $orders = DB::table('orders')
+            ->leftJoin('order_details', 'order_details.order_id', 'orders.id')
+            ->where('orders.id', $id);
+        DB::table('order_details')->where('order_id', $id)->delete();
+        $orders->delete(); 
+        return redirect()->route('orders.index')->with('success','Group deleted successfully');
     }
 }

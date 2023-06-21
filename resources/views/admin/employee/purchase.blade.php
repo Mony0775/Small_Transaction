@@ -54,7 +54,7 @@
                 <td>
                   <div class="btn-group">
                     <div class="mx-3">
-                      <a href="/admin/employee/purchase/{{ $purchase->id }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-fill"></i> View</a>
+                      <a href="/admin/purchases/{{ $purchase->id }}" class="btn btn-sm btn-warning"><i class="bi bi-eye"></i> View</a>
                     </div>
                   </div>
                 </td>

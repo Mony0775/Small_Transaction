@@ -160,6 +160,12 @@ class PurchaseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $purchases = Purchase::find($id);
+        $purchases = DB::table('purchases')
+            ->leftJoin('purchase_details', 'purchase_details.purchase_id', 'purchases.id')
+            ->where('purchases.id', $id);
+        DB::table('purchase_details')->where('purchase_id', $id)->delete();
+        $purchases->delete(); 
+        return redirect()->route('purchases.index')->with('success','Purchase deleted successfully');
     }
 }

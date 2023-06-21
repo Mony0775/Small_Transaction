@@ -1,13 +1,13 @@
 <ul class="sidebar-nav" id="sidebar-nav" >
 
-  <li class="nav-item">
-    <a class="nav-link active" href="/employee/dashboard">
+  <li class="nav-item active">
+    <a class="nav-link" href="/employee/dashboard">
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
   </li><!-- End Dashboard Nav -->
   <li class="nav-item">
-    <a class="nav-link " href="{{ route('customer.index') }}">
+    <a class="nav-link collapsed" href="{{ route('customer.index') }}">
       <i class="bi bi-person-down"></i>
       <span>Customer</span>
     </a>
@@ -54,7 +54,7 @@
     </a>
     <ul id="inventory-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="/employee/inventories">
+        <a href="/employee/inventory">
           <i class="bi bi-circle"></i><span>Inventory List</span>
         </a>
       </li>
@@ -189,3 +189,16 @@
     </a>
   </li>
 </ul>
+
+<script>
+$(document).ready(function() {
+    $( ".nav-item" ).bind( "click", function(event) {
+        event.preventDefault();
+        var clickedItem = $( this );
+        $( ".nav-item" ).each( function() {
+            $( this ).removeClass( "active" );
+        });
+        clickedItem.addClass( "active" );
+    });
+});
+</script>

@@ -51,11 +51,16 @@ class DashboardController extends Controller
             ->leftJoin('order_details', 'order_details.product_id', 'products.id')
             ->where('products.id', $product_id)->sum('quantity');
 
+            $itemS[$product_id] = DB::table('products')
+            ->leftJoin('purchase_details', 'purchase_details.product_id', 'products.id')
+            ->where('products.id', $product_id)->sum('quantity');
+
             $items[$product_id] = DB::table('products')
             ->leftJoin('order_details', 'order_details.product_id', 'products.id')
             ->where('products.id', $product_id)->get();
             // dd($items, $item);
         }
+        // dd($items);
         
 
         $product = DB::table('order_details')->leftJoin('orders', 'orders.id', 'order_details.order_id')->get();
@@ -73,7 +78,10 @@ class DashboardController extends Controller
             'supplier_count',
             'product_count',
             'employee_count',
-            'order_recently'
+            'order_recently',
+            'items',
+            'item',
+            'itemS'
         ]));
     }
 

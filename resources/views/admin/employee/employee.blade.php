@@ -62,8 +62,8 @@
                     <td>
                       <div class="btn-group">
                         <div class="mx-2">
-                          <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#EditEmployee{{ $employee->id }}"><i class="bi bi-pencil"></i> Edit</a>
-                          <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteEmployee{{ $employee->id }}"><i class="bi bi-trash"></i> Delete</a>
+                          <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#EditEmployee{{ $employee->id }}"><i class="bi bi-pencil"></i></a>
+                          <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteEmployee{{ $employee->id }}"><i class="bi bi-trash"></i></a>
                         </div>
                         
                       </div>

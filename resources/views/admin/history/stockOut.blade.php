@@ -19,14 +19,14 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Employee Name</th>
-                    <th scope="col">Customer Name</th>
-                    <th scope="col">Shipper Name</th>
-                    <th scope="col">Payment Type</th>
-                    <th scope="col">Payment Amount</th>
-                    <th scope="col">Transaction type</th>
+                    <th scope="col">Employee</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Shipper</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Txn type</th>
                     <th scope="col">Shipper Date</th>
-                    <th scope="col">Transaction Date</th>
+                    <th scope="col">Txn Date</th>
                     <th scope="col">Order Date</th>
                     <th scope="col">Payment Date</th>
                   </tr>

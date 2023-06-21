@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -51,6 +51,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::get('/address/suppliers', [App\Http\Controllers\Admin\AddressBookController::class, 'supplierAddressBook'])->name('supplier-address-book');
     Route::get('/address/employees', [App\Http\Controllers\Admin\AddressBookController::class, 'employeeAddressBook'])->name('employee-address-book');
     Route::get('/employee_order', [App\Http\Controllers\Admin\EmployeeActionController::class, 'employeeOrder'])->name('Employee-Orders');
+
+    Route::get('/login1', [App\Http\Controllers\Admin\AddressBookController::class, 'login1'])->name('login01');
+
     
 });
 Route::prefix('employee')->middleware(['auth'])->group(function () {
@@ -66,6 +69,8 @@ Route::prefix('employee')->middleware(['auth'])->group(function () {
     Route::get('/transaction', [App\Http\Controllers\Employee\TransactionController::class, 'index'])->name('transactions');
     Route::get('/transaction/order', [App\Http\Controllers\Employee\TransactionController::class, 'order'])->name('transactions');
     Route::get('/transaction/purchasing', [App\Http\Controllers\Employee\TransactionController::class, 'purchasing'])->name('transactions');
+
+    Route::get('/inventory', [App\Http\Controllers\Employee\StockController::class, 'inventories'])->name('inventories');
 
     Route::get('/sale_report', [App\Http\Controllers\Employee\HistoryController::class, 'index'])->name('sale');
     Route::get('/stockIn', [App\Http\Controllers\Employee\HistoryController::class, 'purchasing'])->name('stock');

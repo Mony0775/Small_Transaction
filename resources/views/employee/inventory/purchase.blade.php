@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="pagetitle">
-      <h1>Order History</h1>
+      <h1>Purchase History</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-          <li class="breadcrumb-item active">Order History</li>
+          <li class="breadcrumb-item active">Purchase History</li>
         </ol>
       </nav>
 </div><!-- End Page Title -->
@@ -18,13 +18,13 @@
           <table class="table datatable table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Employee</th>
-                    <th scope="col">Customer</th>
+                    <th scope="col d-flex">#</th>
+                    <th scope="col d-flex">Employee</th>
+                    <th scope="col d-flex">Supplier</th>
                     <th scope="col">Shipper</th>
-                    <th scope="col">Type</th>
                     <th scope="col">Payment</th>
-                    <th scope="col">Transaction</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Shipper Date</th>
                     <th scope="col">Transaction Date</th>
                     <th scope="col">Order Date</th>
@@ -36,18 +36,18 @@
                   <tr>
                     <td>{{ $key+1 }}</td>
                     <td>{{ $transaction-> employeeName }}</td>
-                    <td>{{ $transaction-> CustomerName }}</td>
-                    <td>{{ $transaction-> ShipperName }}</td>
+                    <td>{{ $transaction-> supplierName }}</td>
+                    <td>{{ $transaction-> ShipperName}}</td>
                     <td>{{ $transaction-> payment_type }}</td>
                     <td>{{ $transaction-> payment_amount }}</td>
                     <td>
-                      @if($transaction->type == 'Order')
-                       <div class="text-success">{{ $transaction-> type }}</div> 
+                      @if($transaction->type == 'Purchase')
+                       <div class="text-danger">{{ $transaction-> type }}</div> 
                       @endif
                     </td>
                     <td>{{ $transaction-> shipping_date }}</td>
                     <td>{{ $transaction-> transaction_date }}</td>
-                    <td>{{ $transaction-> order_date }}</td>
+                    <td>{{ $transaction-> purchase_date }}</td>
                     <td>{{ $transaction-> payment_date }}</td>
                   </tr>
                 @endforeach

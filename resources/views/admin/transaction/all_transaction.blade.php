@@ -37,8 +37,16 @@
             <tr>
               <td>{{ $key+1 }}</td>
               <td>{{ $transaction-> employeeName }}</td>
-              <td>{{ $transaction-> CustomerName }}</td>
-              <td>{{ $transaction-> supplierName}}</td>
+              <td>
+                @if($transaction->CustomerName != '') {{ $transaction-> CustomerName }}
+                @else <span class="text-danger">NULL</span>
+                @endif
+              </td>
+              <td>
+                @if($transaction->supplierName != '') {{ $transaction-> supplierName}}
+                @else <span class="text-danger">NULL</span>
+                @endif
+              </td>
               <td>{{ $transaction-> ShipperName }}</td>
               <td>{{ $transaction-> payment_type }}</td>
               <td>{{ $transaction-> payment_amount }}</td>
@@ -52,9 +60,9 @@
               <td>{{ $transaction-> transaction_date }}</td>
               <td>
                 @if ($transaction->type == 'Order')
-                  {{ $transaction->order_date }}
+                {{ $transaction->order_date }}
                 @else
-                  {{ $transaction->purchase_date }}
+                {{ $transaction->purchase_date }}
                 @endif
               </td>
               <td>{{ $transaction-> payment_date }}</td>

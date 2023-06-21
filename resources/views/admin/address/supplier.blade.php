@@ -32,7 +32,6 @@
               <th>Zip Code</th>
               <th>Webpage</th>
               <th>Note</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -49,12 +48,9 @@
               <td>{{ $supplier-> city }}</td>
               <td>{{ $supplier-> province }}</td>
               <td>{{ $supplier-> country }}</td>
-              <td>{{ $supplier-> zip }}</td>
+              <td>{{ $supplier-> zip_code }}</td>
               <td>{{ $supplier-> webpage }}</td>
               <td>{{ $supplier-> note }}</td>
-              <td>
-              <a href="/admin/address/supplier/{{$supplier->id}}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i> View</a>
-              </td>
             </tr>
             @endforeach
           </tbody>

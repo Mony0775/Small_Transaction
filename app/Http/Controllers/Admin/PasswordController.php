@@ -22,7 +22,7 @@ class PasswordController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -54,19 +54,26 @@ class PasswordController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        # Validation
         $request->validate([
-            'old_password' => 'required|min:8|max:255',
-            'new_password' => 'required|min:8|max:255',
+            'old_password' => 'required',
+            'new_password' => 'required',
             'confirm_password' => 'required|same:new_password'
         ]);
-        $password = User::find(auth()->user()->id);
-        if(Hash::check($request->old_password,$password->password)){
-            $password->password = $request->Hash::make('new_password', ['rounds' => 10]);
-            $password->save();
-            return redirect()->back()->with('success', 'Password updated successfully');
-        }else{
-            return redirect()->back()->with('error','Old Password is not match!');
+
+
+        #Match The Old Password
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
         }
+
+
+        #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return redirect( route('setting.index') )->with("status", "Password changed successfully!");
     }
 
     /**

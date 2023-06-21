@@ -62,13 +62,9 @@
               </td>
               <td>
                 <div class="btn-group">
-                  <div class="row mx-2">
-                    <div class="col-md-6">
-                      <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#Editproduct{{ $product->id }}"><i class="bi bi-pencil"></i> Edit</a>
-                    </div>
-                    <div class="col-md-6">
-                      <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#Deleteproduct{{ $product->id }}"><i class="bi bi-trash"></i> <span>Delete</span></a>
-                    </div>
+                  <div class="mx-3 align-center">
+                    <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#Editproduct{{ $product->id }}"><i class="bi bi-pencil"></i></a>
+                    <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#Deleteproduct{{ $product->id }}"><i class="bi bi-trash"></i></a>
                   </div>
                 </div>
               </td>
