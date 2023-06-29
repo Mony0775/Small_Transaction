@@ -82,5 +82,5 @@ Route::prefix('employee')->middleware(['auth'])->group(function () {
     Route::get('/address/employee', [App\Http\Controllers\Employee\AddressBookController::class, 'employeeAddressBook'])->name('employee-address-book');
 
     Route::resource('/setting', 'App\Http\Controllers\Employee\SettingController');
-    Route::resource('/password', 'App\Http\Controllers\Employee\PasswordController');
+    Route::resource('/em_password', 'App\Http\Controllers\Employee\PasswordController');
 });

@@ -113,7 +113,7 @@ class OrderController extends Controller
                     ]);
             
         });
-        return redirect('/employee/orders')->with('status', 'Order Successful');
+        return redirect('/employee/order')->with('status', 'Order Successful');
     }
 
     /**

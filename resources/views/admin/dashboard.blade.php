@@ -212,23 +212,41 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @for ($i = 1; $i <= count($item); $i++)
-                    <tr>
-                    <th scope="row"><a href="#"><img src="{{ asset('images/product/'.$items[$i][0]->image)}}" alt=""></a></th>
-                    <td>{{$items[$i][0]->product_name}}</td>
-                    <td>$ {{$items[$i][0]->sale_price}}</td>
-                    <td>$ {{$items[$i][0]->standard_price}}</td>
-                    <td class="fw-bold">{{$item[$i]}} items</td>
-                    <td>{{$itemS[$i]}} items</td>
-                    </tr>
+                    @for ($i = 1; $i <= count($items); $i++) 
+                      <tr>
+                        <td>
+                        @if(isset($items[$i][0]->image))
+                          <img src="{{ asset('images/product/'.$items[$i][0]->image)}}" alt="">
+                        @endif
+                        </td>
+                        <td>
+                        @if(isset($items[$i][0]->product_name))
+                          {{$items[$i][0]->product_name}}
+                        @endif
+                        </td>
+                        <td> 
+                        @if(isset($items[$i][0]->sale_price))
+                        $  {{$items[$i][0]->sale_price}}
+                        @endif
+                        </td>
+                        <td>
+                        @if(isset($items[$i][0]->standard_price))
+                        $   {{$items[$i][0]->standard_price}}
+                        @endif
+                        </td>
+                        <td>
+                        @if(isset($item[$i]))
+                          {{$item[$i]}}
+                        @endif
+                        </td>
+                        <td>
+                        @if(isset($itemS[$i]))
+                          {{$itemS[$i]}}
+                        @endif
+                        </td>
+                      </tr>
                     @endfor
-                    <!-- <tr>
-                    <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                    <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                    <td>$64</td>
-                    <td class="fw-bold">124</td>
-                    <td>$5,828</td>
-                  </tr> -->
+
                 </tbody>
               </table>
 

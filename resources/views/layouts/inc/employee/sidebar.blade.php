@@ -183,7 +183,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link collapsed" href="{{ route('password.edit',auth()->user()->id) }}">
+    <a class="nav-link collapsed" href="{{ route('em_password.edit',auth()->user()->id) }}">
       <i class="bi bi-card-list"></i>
       <span>Update Password</span>
     </a>

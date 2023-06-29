@@ -29,19 +29,39 @@
           </thead>
           <tbody>
             @for ($i = 1; $i <= count($item); $i++) <tr>
-              <td><img src="{{ asset('images/product/'.$items[$i][0]->image)}}" alt="" width="80px" height="80px"></td>
-              <td><b>{{$items[$i][0]->product_name}}</b></td>
               <td>
-                @if ($items[$i][0]->alert_stock <= 30) <span class="badge badge-danger text-danger"> {{$items[$i][0]->alert_stock}} Low Stock</span>
-                  @elseif ($items[$i][0]->alert_stock >= 100)
-                  <span class="badge badge-success text-warning">{{$items[$i][0]->alert_stock}} High Stock</span>
-                  @else
-                  <span class="badge badge-success text-success">{{$items[$i][0]->alert_stock}}</span>
-                  @endif
+                @if(isset($items[$i][0]->image))
+                <img src="{{ asset('images/product/'.$items[$i][0]->image)}}" alt="" width="80px" height="80px">
+                @endif
               </td>
-              <td>$ {{$items[$i][0]->sale_price}}</td>
-              <td>$ {{$items[$i][0]->standard_price}}</td>
-              <td class="fw-bold">{{$item[$i]}}</td>
+              <td><b>
+                  @if(isset($items[$i][0]->product_name))
+                  {{$items[$i][0]->product_name}}
+                  @endif
+                </b></td>
+              <td>
+              @if(isset($items[$i][0]->alert_stock))
+                    @if ($items[$i][0]->alert_stock <= 30) <span class="badge badge-danger text-danger"> {{$items[$i][0]->alert_stock}} Low Stock</span>
+                    @elseif ($items[$i][0]->alert_stock >= 100)
+                    <span class="badge badge-success text-warning">{{$items[$i][0]->alert_stock}} High Stock</span>
+                    @else
+                    <span class="badge badge-success text-success">{{$items[$i][0]->alert_stock}}</span>
+                    @endif
+              @endif
+              </td>
+              <td>$ 
+              @if(isset($items[$i][0]->sale_price)) 
+                {{$items[$i][0]->sale_price}}
+              @endif
+              </td>
+              <td>$ 
+              @if(isset($items[$i][0]->standard_price)) 
+                {{$items[$i][0]->standard_price}}
+              @endif
+              </td>
+              <td class="fw-bold">
+                {{$item[$i]}}
+              </td>
               <td>{{$itemS[$i]}}</td>
               </tr>
               @endfor

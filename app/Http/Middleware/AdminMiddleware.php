@@ -17,7 +17,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth::user()->role_as == '0'){
-            return redirect('/home')->with('status', 'Access Denied, You are no permission');
+            return redirect('/employee/dashboard')->with('status', 'Access Denied, You are no permission');
         }
         return $next($request);
     }

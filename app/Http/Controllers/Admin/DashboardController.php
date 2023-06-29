@@ -42,10 +42,7 @@ class DashboardController extends Controller
                             ->leftJoin('customers', 'customers.id', 'orders.customer_id')
                             ->whereBetween('orders.updated_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
                             ->orderByDesc('orders.id')->get();
-
-
         $product = DB::table('products')->select('products.id')->get()->count();
-
         foreach(range(1, $product) as $product_id){
             $item[$product_id] = DB::table('products')
             ->leftJoin('order_details', 'order_details.product_id', 'products.id')

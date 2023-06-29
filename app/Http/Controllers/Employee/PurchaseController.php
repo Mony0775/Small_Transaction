@@ -114,7 +114,7 @@ class PurchaseController extends Controller
                 ]);
                 
             });
-            return redirect('/employee/purchases')->with('status', 'purchase Successful');
+            return redirect('/employee/purchase')->with('status', 'purchase Successful');
     }
 
     /**
